@@ -27,7 +27,7 @@
         <div class="col-lg-6 box">
         <div class="card c2 rounded-5">
             <div class="card-body text">
-            <h1 class="no">3</h1>
+            <h1 class="no">1</h1>
             <h3 class="pt-4">Pengunjung</h3>
             </div>
         </div>
@@ -43,7 +43,7 @@
     </div>
     <div class="container">
         <div class="row">
-        <chart-statistik />
+        <statistik />
         </div>
     </div>
     </div>
@@ -86,6 +86,9 @@ useHead({ title: "Home / Perpus Digital" })
 
 .box {
     width: 45%;
+}
+.box a {
+    text-decoration:none;
 }
 
 .c2 {

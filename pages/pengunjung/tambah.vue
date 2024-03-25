@@ -3,31 +3,28 @@
     <div class="row">
         <div class="col-lg-12">
         <h2 class="text-center my-4">FORM KUNJUNGAN</h2>
-        <form>
+        <form @submit.prevent="kirimData">
             <div class="mb-3">
-            <input type="text" class="form-control form-control-lg radius" placeholder="Nama...">
+            <input v-model="form.nama" type="text" class="form-control form-control-lg radius" placeholder="Nama...">
             </div>
             <div class="mb-3">
-            <select class="form-control form-control-lg form-select radius">
+            <select v-model="form.keanggotaan" class="keanggotaan form-control form-select rounded-5">
                 <option value="">Keanggotaan</option>
-                <option value="Siswa">Siswa</option>
-                <option value="Guru">Guru</option>
-                <option value="Staf">Staf</option>
-                <option value="Umum">Umum</option>
+                <option v-for="(member, i) in members" :key="i" :value="member.id">{{ member.nama}}</option>
             </select>
             </div>
-            <div class="mb-3">
+            <div v-if="form.keanggotaan == 1" class="mb-3">
             <div class="row">
                 <div class="col-md-4">
-                <select class="form-control form-control-lg form-select radius mb-2">
-                    <option value="">Tingkat</option>
+                <select v-model="form.tingkat" class="tingkat form-control form-control-lg form-select radius mb-2">
+                    <option value="">Kelas</option>
                     <option value="X">X</option>
                     <option value="XI">XI</option>
                     <option value="XII">XII</option>
                 </select>
                 </div>            
                 <div class="col-md-4">
-                <select class="form-control form-control-lg form-select radius mb-2">
+                <select v-model="form.jurusan" class="jurusan form-control form-control-lg form-select radius mb-2">
                     <option value="">Jurusan</option>
                     <option value="PPLG">PPLG</option>
                     <option value="TJKT">TJKT</option>
@@ -37,8 +34,8 @@
                 </select>
                 </div>
                 <div class="col-md-4">
-                <select class="form-control form-control-lg form-select radius mb-2">
-                    <option value="">Kelas</option>
+                <select v-model="form.kelas" class="kelas form-control form-control-lg form-select radius mb-2">
+                    <option value="">Tingkat</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -48,17 +45,13 @@
             </div>
             </div>
             <div class="mb-3">
-            <select class="form-control form-control-lg form-select radius">
+            <select v-model="form.keperluan" class="keperluan form-control form-control-lg form-select radius">
                 <option value="">Keperluan</option>
-                <option value="Baca Buku">Baca Buku</option>
-                <option value="Pinjam Buku">Pinjam Buku</option>
-                <option value="Kembalikan Buku">Kembalikan Buku</option>
+                <option v-for="(item, i) in objectives" :key="i" :value="item.id">{{ item.nama }}</option>
             </select>
             </div>
             <div class="tombol">
-            <nuxt-link to="/pengunjung/">
                 <button type="submit" class="btn btn-lg radius">KIRIM</button>
-            </nuxt-link>
             <nuxt-link to="/">
                 <button type="submit" class="btn btn-lg radius kembali">KEMBALI</button>
             </nuxt-link>
@@ -68,6 +61,43 @@
     </div>
     </div>
 </template>
+
+<script setup>
+const supabase = useSupabaseClient()
+
+const members = ref([ ])
+const objectives = ref([ ])
+
+const form = ref({
+    nama: "",
+    keanggotaan: "",
+    tingkat: "",
+    jurusan: "",
+    kelas: "",
+    keperluan: "",
+})
+
+const kirimData = async () => {
+    const { error } = await supabase.from ('pengunjung').insert ([form.value])
+    if (!error) navigateTo ('/pengunjung')
+}
+
+const getKeanggotaan = async () => {
+    const { data, error } = await supabase.from ('keanggotaan').select('*')
+    if(data) members.value = data
+}
+
+const getKeperluan = async () => {
+    const { data, error } = await supabase.from ('keperluan').select('*')
+    if(data) members.value = data
+}
+
+onMounted (() => {
+    getKeanggotaan()
+    getKeperluan()
+})
+
+</script>
 
 <style scoped>
 .radius {
@@ -97,9 +127,11 @@ button:hover {
 }
 
 .kembali {
+    background-color: blue;
     position: fixed;
     bottom: 30px;
     right: 30px;
     border-radius: 20px;
 }
+
 </style>

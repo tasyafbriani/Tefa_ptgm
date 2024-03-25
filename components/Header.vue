@@ -37,6 +37,7 @@
 .h-text {
     margin-left: 3px;
     line-height: 10px;
+    font-family: karla ital;
 ;
 }
 
