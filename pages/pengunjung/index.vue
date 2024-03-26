@@ -14,6 +14,7 @@
         <table class="table table-bordered">
         <thead>
             <tr>
+            <td>NO</td>
             <td>NAMA</td>
             <td>KEANGGOTAAN</td>
             <td>WAKTU</td>
