@@ -27,7 +27,7 @@
         <div class="col-lg-6 box">
         <div class="card c2 rounded-5">
             <div class="card-body text">
-            <h1 class="no">5</h1>
+            <h1 class="no">6</h1>
             <h3 class="pt-4">Pengunjung</h3>
             </div>
         </div>
