@@ -25,12 +25,14 @@
     </div>
     <div class="row my-5 d-flex justify-content-around">
         <div class="col-lg-6 box">
+        <nuxt-link to="/pengunjung">
         <div class="card c2 rounded-5">
             <div class="card-body text">
             <h1 class="no">6</h1>
             <h3 class="pt-4">Pengunjung</h3>
             </div>
         </div>
+        </nuxt-link>
         </div>
         <div class="col-lg-6 box">
         <div class="card c3 rounded-5">
@@ -94,6 +96,7 @@ useHead({ title: "Home / Perpus Digital" })
 .c2 {
     border: 1px solid #000;
     background-color:#E1C6F6;
+    color:black;
 }
 
 .c3 {

@@ -17,6 +17,10 @@
     </div>
 </div>  
 </div>  
+<nuxt-link to="/buku">
+    <button type="submit" class="btn ms-3 btn-lg">KEMBALI</button>
+</nuxt-link>
+
 </template>
 
 <script setup>
@@ -36,3 +40,21 @@ onMounted(() =>{
 })
 </script>
 
+
+<style scoped>
+button {
+border: 1px solid #000;
+background-color: #265cb5;
+color: #fff;
+position: fixed;
+bottom: 30px;
+right: 30px;
+border-radius: 20px;
+}
+
+button:hover {
+border: 1px solid #000;
+background-color: #fff;
+color: #265cb5;
+}
+</style>
