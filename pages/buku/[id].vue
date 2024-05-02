@@ -12,7 +12,7 @@
             <li class="list-group-item">tahun terbit : {{ buku.tahun_terbit}}</li>
             <li class="list-group-item">penerbit : {{ buku.penerbit }}</li>
             <li class="list-group-item">rak : {{ buku.rak}}</li>
-            <li class="list-group-item">deskripsi : {{ buku.deskripsi }}</li>
+            <li class="list-group-item">sinopsis : {{ buku.deskripsi }}</li>
         </ul>
     </div>
 </div>  
@@ -44,7 +44,7 @@ onMounted(() =>{
 <style scoped>
 button {
 border: 1px solid #000;
-background-color: #265cb5;
+background-color: #D3D3D3;
 color: #fff;
 position: fixed;
 bottom: 30px;

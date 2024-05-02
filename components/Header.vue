@@ -37,12 +37,12 @@
 .h-text {
     margin-left: 3px;
     line-height: 10px;
-    font-family: karla ital;
+    font-family: math sans bold italic;
 ;
 }
 
 .t-judul {
-    margin-left: 2px;
+    margin-left: 3px;
     font-size: 3px;
     font-weight: 500;
 }

@@ -59,7 +59,7 @@ getPengunjung();
 <style scoped>
 button {
 border: 1px solid #000;
-background-color: #265cb5;
+background-color: #D3D3D3;
 color: #fff;
 position: fixed;
 bottom: 30px;
@@ -75,4 +75,6 @@ color: #265cb5;
 .my-3 input {
 background-color: #f3f3f3;
 }
+
+
 </style>

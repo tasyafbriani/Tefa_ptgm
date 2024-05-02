@@ -1,7 +1,6 @@
 <template>
   <div class="container-fluid p-5">
     <div class="col-lg-12 -flex justify-content-around">
-      <h2 class="text-center">Buku</h2>
       <div class="my-3">
         <form @submit.prevent="getBooks">
           <input
@@ -68,7 +67,7 @@ const keyword = ref("");
 
 button {
   border: 1px solid #000;
-  background-color: #265cb5;
+  background-color: #D3D3D3;
   color: #fff;
   position: fixed;
   bottom: 30px;

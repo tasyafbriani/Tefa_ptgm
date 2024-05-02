@@ -155,7 +155,7 @@ button:hover {
 }
 
 .kembali {
-  background-color: blue;
+  background-color: #D3D3D3;
   position: fixed;
   bottom: 30px;
   right: 30px;
