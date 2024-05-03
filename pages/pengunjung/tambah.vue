@@ -145,7 +145,7 @@ select {
 button {
   border: 1px solid #000;
   background-color: #265cb5;
-  color: #fff;
+  color: #265cb5;
 }
 
 button:hover {
