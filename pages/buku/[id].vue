@@ -2,9 +2,13 @@
 <div>
     <h2 class="text-start my-4">{{ buku.judul}}</h2>
     <div class="row">
-    <div class="col-md-2">
-    <span v-if="buku.cover"><img :src="buku.cover" :alt="buku.judul"></span>
-    <span v-else><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.m.wikipedia.org%2Fwiki%2FFile%3APlaceholder_view_vector.svg&psig=AOvVaw2flwzLHayqCCqqbxU2I7U-&ust=1711438058162000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCLCG_ePxjoUDFQAAAAAdAAAAABAH" :alt="buku.judul"></span>
+    <div class="col-md-3">
+    <div class="card">
+    <div class="card-body">
+    <span v-if="buku.cover"><img :src="buku.cover" :alt="buku.judul" class="cover"></span>
+    <span v-else><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.m.wikipedia.org%2Fwiki%2FFile%3APlaceholder_view_vector.svg&psig=AOvVaw2flwzLHayqCCqqbxU2I7U-&ust=1711438058162000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCLCG_ePxjoUDFQAAAAAdAAAAABAH" :alt="buku.judul" class="cover"></span>
+</div>
+</div>
 </div>
     <div class="col-md-6">
         <ul class="list-group list-group-flush">
@@ -56,5 +60,9 @@ button:hover {
 border: 1px solid #000;
 background-color: #fff;
 color: #265cb5;
+}
+
+.cover {
+    width:100%;
 }
 </style>

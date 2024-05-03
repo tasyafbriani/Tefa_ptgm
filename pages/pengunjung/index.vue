@@ -5,12 +5,13 @@
         <h2 class="text-center my-4">RIWAYAT KUNJUNGAN</h2>
         <div class="my-3">
         <input
+            v-model="keyword"
             type="search"
             class="form-control form-cntrol-lg rounded-4"
             placeholder="Filter..."
         />
         </div>
-        <div class="my-3 text-muted">Menampilkan 1 dari 1</div>
+        <div class="my-3 text-muted">Menampilkan 10 dari 1</div>
         <table class="table table-bordered">
         <thead>
             <tr>
