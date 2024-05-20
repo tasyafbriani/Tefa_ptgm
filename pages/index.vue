@@ -28,8 +28,7 @@
         <nuxt-link to="/pengunjung">
         <div class="card c2 rounded-5">
             <div class="card-body text">
-            <h1 class="no">6</h1>
-            <h3 class="pt-4">Pengunjung</h3>
+            <h2><span class="no">{{ jml_pengunjung }}</span>Pengunjung</h2>
             </div>
         </div>
         </nuxt-link>
@@ -37,8 +36,7 @@
         <div class="col-lg-6 box">
         <div class="card c3 rounded-5">
             <div class="card-body text">
-            <h1 class="no">30</h1>
-            <h3 class="pt-4">Buku</h3>
+            <h2><span class="no">{{ jml_buku }}</span>Buku</h2>
             </div>
         </div>
         </div>
@@ -53,6 +51,29 @@
 
 <script setup>
 useHead({ title: "Home / Perpus Digital" })
+const supabase = useSupabaseClient()
+const jml_pengunjung = ref(0)
+const jml_buku = ref(0)
+
+async function getjml_pengunjung() {
+const{ error , data, count } = await supabase
+.from("pengunjung")
+.select('*', { count: 'exact' })
+if (count) jml_pengunjung.value = count
+
+}
+async function getjml_buku() {
+const{ error , data, count } = await supabase
+.from("buku")
+.select('*', { count: 'exact' })
+if (count) jml_buku.value = count
+
+}
+
+onMounted(() => {
+getjml_pengunjung()
+getjml_buku()
+})
 </script>
 
 <style scoped>
