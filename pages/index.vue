@@ -5,7 +5,7 @@
         <nuxt-link to="/pengunjung/tambah">
             <div class="card bg-pengunjung rounded-5">
             <div class="card-body">
-                <h4>Pengunjung</h4>
+                <h2>Pengunjung</h2>
             </div>
             </div>
         </nuxt-link>
@@ -14,7 +14,7 @@
         <nuxt-link to="/buku">
             <div class="card bg-buku rounded-5">
             <div class="card-body">
-                <h4>Buku</h4>
+                <h2>Buku</h2>
             </div>
             </div>
         </nuxt-link>
@@ -96,7 +96,7 @@ getjml_buku()
     background-size: cover;
 }
 
-.card-body>h4 {
+.card-body>h2 {
     color: #000000;
     position: static;
     bottom: 5px;
