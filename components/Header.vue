@@ -22,8 +22,8 @@
     align-items: center;
     width: 100%;
     height: 150px;
-    background-color: #0094E7;
-    color: #fff;
+    background-color: #008cdd;
+    color: #ffff;
 }
 
 .h-img > img{
