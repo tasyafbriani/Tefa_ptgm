@@ -26,12 +26,10 @@
     color: #fff;
 }
 
-.h-img {
-    margin-left: 25px;
-}
-
 .h-img > img{
     width: 80%;
+    height: 80%;
+    margin-left: 25px;
 }
 
 .h-text {
