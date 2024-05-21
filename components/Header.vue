@@ -8,7 +8,7 @@
         <h1>PERPUSTAKAAN DIGITAL</h1>
     </div>
     <div>
-    <p>SMKN 4 TASIKMALAYA</p>
+    <p>SMKN 4 TASIKMALAYA</P>
     <p>Jl.Depok,Sukamenak,Purbaratu</p>
     </div>
     </div>
