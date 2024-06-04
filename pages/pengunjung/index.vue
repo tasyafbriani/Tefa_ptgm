@@ -1,19 +1,16 @@
 <template>
-<div class="container-fluid">
+    <div class="container-fluid">
     <div class="row">
-    <div class="col-lg-12 p-5">
+        <div class="col-lg-12">
         <h2 class="text-center my-4">RIWAYAT KUNJUNGAN</h2>
         <div class="my-3">
-        <input
-            v-model="keyword"
-            type="search"
-            class="form-control form-cntrol-lg rounded-4"
-            placeholder="Filter..."
-        />
+            <form  @submit.prevent="getBuku">
+            <input v-model="keyword" type="search" class="form-control rounded-5" placeholder="Filter...">
+            </form>
         </div>
-        <div class="my-3 text-muted">Menampilkan 10 dari 1</div>
+        <div class="my-3 text-muted">menampilkan daftar pengunjung</div>
         <table class="table table-bordered">
-        <thead>
+            <thead>
             <tr>
             <td>NO</td>
             <td>NAMA</td>
@@ -41,20 +38,24 @@
 </template>
 
 <script setup>
-const supabase = useSupabaseClient();
-
-const visitors = ref([]);
+const supabase = useSupabaseClient()
+const keyword = ref('')
+const visitors = ref([])
 
 const getPengunjung = async () => {
-const { data, error } = await supabase
-    .from("pengunjung")
-    .select("*, keanggotaan (*), keperluan(*)");
-if (data) visitors.value = data;
-};
+const { data, error } = await supabase.from('pengunjung').select(`*, keanggotaan(*), keperluan(*)`)
+if(data) visitors.value = data
+}
+const getBuku = async () => {
+const { data, error } = await supabase.from('pengunjung').select(`*, keanggotaan(*), keperluan(*)`)
+.ilike('nama', `%${keyword.value}%`)
+if(data) visitors.value = data
+}
 
 onMounted(() => {
-getPengunjung();
-});
+getPengunjung()
+getBuku()
+})
 </script>
 
 <style scoped>
